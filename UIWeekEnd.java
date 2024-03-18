@@ -7,7 +7,6 @@ class UIWeekEnd {
 }
     
 class AppWeekEnd {
-
     WeekEnd we;
     boolean quitter;
 
@@ -50,7 +49,6 @@ class AppWeekEnd {
 
     /// Affiche un message d'au revoir
     public void au_revoir() {
-	
+		System.out.println("N'arrête jamais d'apprendre");
     }
-
 }
