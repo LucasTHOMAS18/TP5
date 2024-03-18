@@ -1,3 +1,4 @@
+package src;
 class UIWeekEnd {    
     public static void main(String[] args) {
 		WeekEnd leWeekEnd = new WeekEnd();
