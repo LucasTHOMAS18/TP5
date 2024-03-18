@@ -24,20 +24,46 @@ class AppWeekEnd {
 		au_revoir();
     }
 
+	public void afficherPersonnes() {
+		System.out.println("Voici les personnes présentes pendant le weekend:");
+		for (Personne personne : this.we.getAmis()) {
+			System.out.println("-" + personne.toString());
+		}
+	}
+
     public void menu() {
 		boolean commande_faite = false;
 		while(!commande_faite) {
 			System.out.println("Que voulez vous faire?");
+			System.out.println("P: afficher les personnes du week-end");
+			System.out.println("D: afficher les dépences du week-end");
+			System.out.println("M: afficher la dépense moyenne par personne du week-end");
 			System.out.println("Q: quitter");
 			
 			String commande_brute = System.console().readLine();
 			String commande = commande_brute.strip().toLowerCase();
 			
-			if(commande.equals("q")) {
-				quitter = true;
-				commande_faite = true;
-			} else {
+			switch (commande) {
+				case "q":
+					quitter = true;
+					commande_faite = true;
+					break;
+				
+				case "p":
+					commande_faite = true;
+					this.afficherPersonnes();
+
+				case "d":
+					commande_faite = true;
+					break;
+
+				case "m":
+					commande_faite = true;
+					break;
+
+				default:
 				System.out.println("Commande '" + commande_brute + "' invalide.");
+					break;
 			}
 		}
     }
