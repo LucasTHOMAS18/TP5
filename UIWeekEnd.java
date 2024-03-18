@@ -1,43 +1,45 @@
 class UIWeekEnd {    
     public static void main(String[] args) {
-	WeekEnd leWeekEnd = new WeekEnd();
-	AppWeekEnd app = new AppWeekEnd(leWeekEnd);
-	app.run();
+		WeekEnd leWeekEnd = new WeekEnd();
+		AppWeekEnd app = new AppWeekEnd(leWeekEnd);
+		app.run();
     }
 }
-    
+
 class AppWeekEnd {
     WeekEnd we;
     boolean quitter;
 
     AppWeekEnd(WeekEnd we) {
-	this.we = we;
-	this.quitter = false;
+		this.we = we;
+		this.quitter = false;
     }
 
     public void run() {
-	bienvenue();
-	boolean continuer = true;
-	while(!quitter) {
-	    menu();
-	}
-	au_revoir();
+		bienvenue();
+		boolean continuer = true;
+		while(!quitter) {
+			menu();
+		}
+		au_revoir();
     }
 
     public void menu() {
-	boolean commande_faite = false;
-	while(!commande_faite) {
-	    System.out.println("Que voulez vous faire?");
-	    System.out.println("Q: quitter");
-	    String commande_brute = System.console().readLine();
-	    String commande = commande_brute.strip().toLowerCase();
-	    if(commande.equals("q")) {
-		quitter = true;
-		commande_faite = true;
-	    } else {
-		System.out.println("Commande '" + commande_brute + "' invalide.");
-	    }
-	}
+		boolean commande_faite = false;
+		while(!commande_faite) {
+			System.out.println("Que voulez vous faire?");
+			System.out.println("Q: quitter");
+			
+			String commande_brute = System.console().readLine();
+			String commande = commande_brute.strip().toLowerCase();
+			
+			if(commande.equals("q")) {
+				quitter = true;
+				commande_faite = true;
+			} else {
+				System.out.println("Commande '" + commande_brute + "' invalide.");
+			}
+		}
     }
 
     /// Affiche un message de bienvenue
